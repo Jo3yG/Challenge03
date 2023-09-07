@@ -20,16 +20,16 @@ var generateBtn = document.querySelector("#generate");
 
 
 // setting up variables
-    var upperCase = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
-    var lowerCase = ("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
-    var numeral = ("0","1","2","3","4","5","6","7","8","9");
-    var special = ("!","@","#","$","%","^","&","*","(",")");
-    var click
-    var selections
+    var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    var numeral = ["0","1","2","3","4","5","6","7","8","9"];
+    var special = ["!","@","#","$","%","^","&","*","(",")"];
+    var click;
+    var selections;
 //need to create function to generate password
     function generatePassword(){
         //length above 8 but lower than 128
-        var pswLength = prompt("Password must be between 8-128 characters!!! ");
+         var pswLength = prompt("Password must be between 8-128 characters!!! ");
         //verify password is between 8-128 characters
         if ( pswLength < 8 || pswLength > 128){
             alert("Please pay attention to instructions!!!");
@@ -60,7 +60,7 @@ var generateBtn = document.querySelector("#generate");
         selections = alert("Sorry, You MUST choose one criteria, Thank You.");
     }
     //shows 4 positive options
-    else if (upperCase && lowerCase && numeral && special){
+    else if (upperCase===true && lowerCase===true && numeral===true && special===true){
         selections = upperCase.concat(lowerCase, numeral, special);
     }
     //shows if only 3 options are chosen any 3 options
@@ -109,10 +109,12 @@ else if (special){
     selections = special;
 };
 
+var pickSelections = ""
+
 for (var i=0; 1 < click; i++){ 
     var pickSelections = selections[Math.floor(Math.random() * selections.length)];
     password.push(pickSelections);
-}
+};
 
 // Write password to the #password input
 function writePassword() {
@@ -121,7 +123,7 @@ function writePassword() {
 
   passwordText.value = password;
 
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
