@@ -20,10 +20,11 @@ var generateBtn = document.querySelector("#generate");
 
 
 // setting up variables
-    var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-    var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    var numeral = ["0","1","2","3","4","5","6","7","8","9"];
-    var special = ["!","@","#","$","%","^","&","*","(",")"];
+    var upperCase = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+    var lowerCase = ("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
+    var numeral = ("0","1","2","3","4","5","6","7","8","9");
+    var special = ("!","@","#","$","%","^","&","*","(",")");
+    var click
     var selections
 //need to create function to generate password
     function generatePassword(){
@@ -33,13 +34,13 @@ var generateBtn = document.querySelector("#generate");
         if ( pswLength < 8 || pswLength > 128){
             alert("Please pay attention to instructions!!!");
         } else {
-            //ask for the confirmations
+        //ask for the confirmations
         upperCase = confirm("Will you like Uppers?");
         lowerCase = confirm("Will you like Lowers?");
         numeral = confirm("Will you like Numerals?");
         special = confirm("Will you like Specials?");
         };
-    }
+    };
     //creating if statements for options of either choosoing 1 criteria through all 4
     //shows if all 4 are negative, now need option for all
     // 4 = upperCase && lowercase && numeric && special
@@ -55,8 +56,12 @@ var generateBtn = document.querySelector("#generate");
     //    numeric && special
     //1
     // shows the 4 options if not chosen 
-    if (!upperCase && !lowerCase && !numeral && ! special){
+    if (!upperCase && !lowerCase && !numeral && !special){
         selections = alert("Sorry, You MUST choose one criteria, Thank You.");
+    }
+    //shows 4 positive options
+    else if (upperCase && lowerCase && numeral && special){
+        selections = upperCase.concat(lowerCase, numeral, special);
     }
     //shows if only 3 options are chosen any 3 options
     else if (upperCase && lowerCase && numeral){
