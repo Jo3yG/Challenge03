@@ -18,6 +18,11 @@ var pswSelections = {
         var lCase;
         var numbers;
         var sCharacters;
+
+        //need psw to start somewhere
+        pswLength = 0;
+        pswSelections.pswLength = 0;
+        result = "";
         //length above 8 but lower than 128
          var pswLength = prompt("Password must be between 8-128 characters!!! ");
         //verify password is between 8-128 characters
