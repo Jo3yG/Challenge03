@@ -1,5 +1,3 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
 
 //GIVEN I need a new, secure password
 //WHEN I click the button to generate a password
@@ -16,6 +14,104 @@ var generateBtn = document.querySelector("#generate");
 //THEN a password is generated that matches the selected criteria
 //WHEN the password is generated
 //THEN the password is either displayed in an alert or written to the page
+
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+
+// setting up variables
+    var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    var numeral = "0123456789";
+    var special = "!@#$%^&*()";
+    var click
+    var selections
+
+    function generatePassword(){
+        //ask for the confirmations
+        upperCase = confirm("Will you like Uppers?");
+        lowerCase = confirm("Will you like Lowers?");
+        numeral = confirm("Will you like Numerals?");
+        special = confirm("Will you like Specials?");
+        //ask how many characters
+        click = parseInt(prompt (" How many characters? Between 8-128 characters"));
+        if (!click){
+            //if they dont put value
+            alert ("Nope, I need a value");
+        }
+        else if (click < 8 || click > 128 ){
+            //if they put less than 8 or more than 128 charaters
+            click = parseInt(prompt("I said BETWEEN 8-128 characters!!!"))
+        }
+    }
+    //creating if statements for options of either choosoing 1 criteria through all 4
+    //shows if all 4 are negative, now need option for all
+    // 4 = upperCase && lowercase && numeric && special
+    //3 = upperCase && lowercase && numeric
+    //    upperCase && lowerCase && special
+    //    upperCase && numeric && special
+    //    lowerCase && numeric && special
+    //2 = upperCase && lowerCase
+    //    upperCase && numeric
+    //    upperCase && special
+    //    lowerCase && numeric
+    //    lowerCase && special
+    //    numeric && special
+    //1
+    // shows the 4 options if not chosen 
+    if (!upperCase && !lowerCase && !numeral && ! special){
+        selections = alert("Sorry, You MUST choose one criteria, Thank You.");
+    }
+    //shows if only 3 options are chosen any 3 options
+    else if (upperCase && lowerCase && numeral){
+        selections = upperCase.concat(lowerCase, numeral);
+    }
+else if (upperCase && lowerCase && special){
+    selections = upperCase.concat(lowerCase, special);
+}
+else if  (upperCase && numeral && special){
+    selections = upperCase.concat(numeral, special);
+}
+else if ( lowerCase && numeral && special){ 
+    selections = lowerCase.concat(numeral, special);
+}
+//shows if any 2 options are chosen
+else if (upperCase && lowerCase){
+    selections = upperCase.concat(lowerCase);
+}
+else if ( upperCase && numeral){
+    selections = upperCase.concat(numeral);
+}
+else if (upperCase && special){
+    selections = upperCase.concat(special);
+}
+else if (lowerCase && numeral){
+    selections = lowerCase.concat(numeral);
+}
+else if (lowerCase && special){
+    selections = lowerCase.concat(special);
+}
+else if (numeral && special){
+    selections = numeral.concat(special);
+}
+//shows for just 1 option, any
+else if (upperCase){
+    selections = upperCase;
+}
+else if (lowerCase){
+    selections = lowerCase;
+}
+else if (numeral){
+    selections = numeral;
+}
+else if (special){
+    selections = special;
+};
+
+for (var i=0; 1 < click; i++){ 
+    var pickSelections = selections[Math.floor(Math.random() * selections.length)];
+    password.push(pickSelections);
+}
 
 // Write password to the #password input
 function writePassword() {
