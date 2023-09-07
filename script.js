@@ -26,23 +26,20 @@ var generateBtn = document.querySelector("#generate");
     var special = "!@#$%^&*()";
     var click
     var selections
-
+//need to create function to generate password
     function generatePassword(){
-        //ask for the confirmations
+        //length above 8 but lower than 128
+        var pswLength = prompt("Password must be between 8-128 characters!!! ");
+        //verify password is between 8-128 characters
+        if ( pswLength < 8 || pswLength > 128){
+            alert("Please pay attention to instructions!!!");
+        } else {
+            //ask for the confirmations
         upperCase = confirm("Will you like Uppers?");
         lowerCase = confirm("Will you like Lowers?");
         numeral = confirm("Will you like Numerals?");
         special = confirm("Will you like Specials?");
-        //ask how many characters
-        click = parseInt(prompt (" How many characters? Between 8-128 characters"));
-        if (!click){
-            //if they dont put value
-            alert ("Nope, I need a value");
-        }
-        else if (click < 8 || click > 128 ){
-            //if they put less than 8 or more than 128 charaters
-            click = parseInt(prompt("I said BETWEEN 8-128 characters!!!"))
-        }
+        };
     }
     //creating if statements for options of either choosoing 1 criteria through all 4
     //shows if all 4 are negative, now need option for all
