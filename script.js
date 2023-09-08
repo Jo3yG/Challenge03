@@ -7,6 +7,7 @@ var pswSelections = {
      lowerCase : ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
      numeral : ["0","1","2","3","4","5","6","7","8","9"],
      special : ["!","@","#","$","%","^","&","*","(",")"],
+     passLong : 0
 }
 //need to create function to generate password
     function generatePassword(){
@@ -20,8 +21,8 @@ var pswSelections = {
         var sCharacters;
 
         //need psw to start somewhere
-        passwordLength = 0;
-        pswSelections.pswLength = 0;
+        pswLength = 0;
+        pswSelections.passLong = 0;
         result = "";
         //adding a while loop for psw length
         while (pswLength <8 || pswLength > 128){
@@ -38,9 +39,9 @@ var pswSelections = {
         sCharacters = confirm("Will you like Specials?");
         };
 // if the selections and index is shorter than the selected amount of characters then characters will be added
-        while (pswSelections.pswLength < passwordLength ){
+        while (pswSelections.passLong < pswLength ){
             //if no selection is made
-            if (!uCase && !lCase && !numbers && !sCharacters){
+            if (uCase===false && lCase===false && numbers===false && sCharacters===false){
                 alert("One selection must be made!!")
                 //will return to make choices again
                 uCase = confirm("Will you like Uppers?");
@@ -50,22 +51,22 @@ var pswSelections = {
             }
             //If uCase was selected then as long as pswSelectiona and pswLength are less than passwordLength than a random uCase will be added to result 
             else {
-                if (uCase && pswSelections.pswLength < passwordLength){
+                if (uCase && pswSelections.passLong < pswLength){
                     var upCase = pswSelections.pswLength[Math.floor(Math.random() * 26)]
                     result = result + upCase;
                     pswSelections.pswLength++;
                 }
-                if (lCase && pswSelections.pswLength < passwordLength){
+                if (lCase && pswSelections.passLong < pswLength){
                     var lowCase = pswSelections.pswLength[Math.floor(Math.random() * 26)]
                     result = result + lowCase;
                     pswSelections.pswLength++;
                 }
-                if (numbers && pswSelections.pswLength < passwordLength){
+                if (numbers && pswSelections.passLong < pswLength){
                     var num = pswSelections.pswLength[Math.floor(Math.random() * 10)]
                     result = result + num;
                     pswSelections.pswLength++;
                 }
-                if (sCharacters && pswSelections.pswLength < passwordLength){
+                if (sCharacters && pswSelections.passLong < pswLength){
                     var sChar = pswSelections.pswLength[Math.floor(Math.random() * 10)]
                     result = result + sChar;
                     pswSelections.pswLength++;
