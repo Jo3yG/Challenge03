@@ -57,10 +57,22 @@ var pswSelections = {
                 }
                 if (lCase && pswSelections.pswLength < passwordLength){
                     var lowCase = pswSelections.pswLength[Math.floor(Math.random() * 26)]
-                    result = result +lowCase;
+                    result = result + lowCase;
+                    pswSelections.pswLength++;
+                }
+                if (numbers && pswSelections.pswLength < passwordLength){
+                    var num = pswSelections.pswLength[Math.floor(Math.random() * 10)]
+                    result = result + num;
+                    pswSelections.pswLength++;
+                }
+                if (sCharacters && pswSelections.pswLength < passwordLength){
+                    var sChar = pswSelections.pswLength[Math.floor(Math.random() * 10)]
+                    result = result + sChar;
                     pswSelections.pswLength++;
                 }
             }
+        }
+    }
 
         
     
@@ -91,7 +103,7 @@ var pswSelections = {
       //  selections = upperCase.concat(lowerCase, numeral);
     //}
 //else if (upperCase && lowerCase && special){
-    selections = upperCase.concat(lowerCase, special);
+//   selections = upperCase.concat(lowerCase, special);
 //}
 //else if  (upperCase && numeral && special){
   //  selections = upperCase.concat(numeral, special);
