@@ -26,7 +26,7 @@ var pswSelections = {
         //adding a while loop for psw length
         while (pswLength <8 || pswLength > 128){
             pswLength = prompt("How Many charactewrs would you like? Between 8-128 characters!!! ");
-        }
+        
         //verify password is between 8-128 characters
         if ( pswLength < 8 || pswLength > 128){
             alert("Please pay attention to instructions!!!");
@@ -69,10 +69,14 @@ var pswSelections = {
                     var sChar = pswSelections.pswLength[Math.floor(Math.random() * 10)]
                     result = result + sChar;
                     pswSelections.pswLength++;
-                }
-            }
+                }//return result;
+            }//return result;
         }
-    }
+      //return result;
+    }return result;
+} //return result;
+ //return result;
+
 
         
     
