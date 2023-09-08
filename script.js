@@ -52,22 +52,22 @@ var pswSelections = {
             //If uCase was selected then as long as pswSelectiona and pswLength are less than passwordLength than a random uCase will be added to result 
             else {
                 if (uCase && pswSelections.passLong < pswLength){
-                    var upCase = pswSelections.passLong[Math.floor(Math.random() * 26)]
+                    var upCase = pswSelections.upperCase[Math.floor(Math.random() * 26)]
                     result = result + upCase;
                     pswSelections.passLong++;
                 }
                 if (lCase && pswSelections.passLong < pswLength){
-                    var lowCase = pswSelections.passLong[Math.floor(Math.random() * 26)]
+                    var lowCase = pswSelections.lowerCase[Math.floor(Math.random() * 26)]
                     result = result + lowCase;
                     pswSelections.passLong++;
                 }
                 if (numbers && pswSelections.passLong < pswLength){
-                    var num = pswSelections.passLong[Math.floor(Math.random() * 10)]
+                    var num = pswSelections.numeral[Math.floor(Math.random() * 10)]
                     result = result + num;
                     pswSelections.passLong++;
                 }
                 if (sCharacters && pswSelections.passLong < pswLength){
-                    var sChar = pswSelections.passLong[Math.floor(Math.random() * 10)]
+                    var sChar = pswSelections.special[Math.floor(Math.random() * 10)]
                     result = result + sChar;
                     pswSelections.passLong++;
                 }//return result;
