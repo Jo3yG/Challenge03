@@ -31,7 +31,7 @@ var pswSelections = {
         //verify password is between 8-128 characters
         if ( pswLength < 8 || pswLength > 128){
             alert("Please pay attention to instructions!!!");
-        } else {
+        }else {
         //ask for the confirmations
         uCase = confirm("Will you like Uppers?");
         lCase = confirm("Will you like Lowers?");
