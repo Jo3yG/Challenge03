@@ -14,3 +14,4 @@ https://github.com/Jo3yG/Challenge03.git
 # Website URL
 https://jo3yg.github.io/Challenge03/
 # Profile URL
+https://jo3yg.github.io/Challenge02/
