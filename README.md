@@ -7,6 +7,10 @@ I was having issues with the first code i thought of, i even left the code (comm
 # Code
 The code was pretty much started from scratch and I had to figure out the correct formula. The first code i was going for was really long and i believe what was eventually keeoing me from completing that way was i probably didnt have brackets in the right area, but the 2nd iteration of my code my issue was naming structure and how i had different names everywhere even though i wanted to use the same var.
 # Image
+![Alt text](<Screenshot 2023-09-09 at 1.48.38 AM.png>)
+
 # GitHub Repository
+https://github.com/Jo3yG/Challenge03.git
 # Website URL
+https://jo3yg.github.io/Challenge03/
 # Profile URL
